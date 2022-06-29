@@ -148,7 +148,9 @@ const app = {
       const seekTime = (e.target.value / 100) * audio.duration;
       audio.currentTime = seekTime;
     };
-    nextSong = function () {
+
+    // khi next son
+    nextBtn.onclick = function () {
       if (_this.isRandom) {
         _this.playRandomSong();
       } else {
@@ -158,8 +160,6 @@ const app = {
       _this.scrollToActiveSong();
       audio.play();
     };
-    // khi next son
-    nextBtn.onclick = nextSong;
     // khi prev song
     prevBtn.onclick = function () {
       if (_this.isRandom) {
@@ -195,7 +195,7 @@ const app = {
         // _this.repeatSong();
         audio.play();
       } else {
-        _this.nextSong();
+        nextBtn.click();
       }
     };
     // lang nghe click vao playlist
